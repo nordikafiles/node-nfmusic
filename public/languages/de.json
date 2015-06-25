@@ -1,0 +1,14 @@
+{
+	"yes": "Ja",
+	"no": "Nein",
+	"ok": "Ok",
+	"Invert mouse wheel": "Invert Mausrad",
+	"Invert mouse wheel to control the volume?": "Invertiert man dem Mausrad, um die Lautstärke zu regeln?",
+	"Unknown destination address": "Unbekannte Zieladresse",
+	"Unknown destination address. Do you want to specify it now?": "Unbekannte Zieladresse. Möchten Sie es jetzt geben?",
+	"Testing JSON-RPC": "Test JSON-RPC",
+	"apply": "Anwenden",
+	"cancel": "Stornieren",
+	"Successfully paired": "Erfolgreich gekoppelt",
+	"Successfully paired with kodi": "Erfolgreich mit kodi gepaart"
+}

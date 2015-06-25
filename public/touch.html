@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Touch test</title>
+	<style>
+	.touch {
+		width: 150px;
+		height: 150px;
+		border: 4px solid orange;
+		border-radius: 50%;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	</style>
+</head>
+<body>
+	<script>
+		window.addEventListener("touchmove", function (e) {
+			document.querySelector("#touches").innerHTML = "Touches: " + e.touches.length;
+			for (var i = 0; i < e.touches.length; i++) {
+				document.querySelector("#touch" + i).style.left = e.touches[i].pageX + "px";
+				document.querySelector("#touch" + i).style.top = e.touches[i].pageY + "px";
+			}
+			return false
+		});
+		window.addEventListener("touchstart", function (e) {
+			document.querySelector("#touches").innerHTML = "Touches: " + e.touches.length;
+			for (var i = 0; i < e.touches.length; i++) {
+				document.body.innerHTML += '<div class="touch" id="touch' + i + '" style="left: ' + e.touches[i].pageX + 'px; top: ' + e.touches[i].pageY + 'px;"></div>';
+			}
+
+		});
+		window.addEventListener("touchend", function (e) {
+			for (el in document.querySelectorAll(".touch")) {
+				el.remove();
+			}
+			
+		});
+
+	</script>
+	<div id="touches"></div>
+	
+</body>
+</html>

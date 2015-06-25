@@ -1,0 +1,14 @@
+{
+	"yes": "Да",
+	"no": "Нет",
+	"ok": "Ok",
+	"Invert mouse wheel": "Инвертировать колесо мыши",
+	"Invert mouse wheel to control the volume?": "Инвертировать колесо мыши для управления громкостью?",
+	"Unknown destination address": "Не указан адрес приемника",
+	"Unknown destination address. Do you want to specify it now?": "Не указан адрес приемника. Хотите ли вы указать его сейчас?",
+	"Testing JSON-RPC": "Тест JSON-RPC",
+	"apply": "Применить",
+	"cancel": "Отмена",
+	"Successfully paired": "Успешно подключено",
+	"Successfully paired with kodi": "Медиацентр подсоединен успешно"
+}

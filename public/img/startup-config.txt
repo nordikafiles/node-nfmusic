@@ -1,0 +1,237 @@
+! $$$ Model: ZyXEL Keenetic Omni
+! $$$ Version: 2.0
+! $$$ Agent: http/ci
+! $$$ Last change: Mon,  5 Jan 2015 09:03:46 GMT
+! $$$ Md5 checksum: b98c89678a19ce3217d343a956e0b325
+
+system
+    set net.ipv4.ip_forward 1
+    set net.ipv4.tcp_fin_timeout 30
+    set net.ipv4.tcp_keepalive_time 120
+    set net.ipv4.netfilter.ip_conntrack_tcp_timeout_established 1200
+    set net.ipv4.netfilter.ip_conntrack_max 4096
+    set vm.swappiness 100
+    set net.ipv6.conf.all.forwarding 1
+    hostname Keenetic_Omni
+    clock date  5 Jan 2015 12:03:49
+    clock timezone Europe/Moscow
+    domainname WORKGROUP
+!
+ntp server 0.pool.ntp.org
+ntp server 1.pool.ntp.org
+ntp server 2.pool.ntp.org
+ntp server 3.pool.ntp.org
+known host home-pc 74:d4:35:9d:f4:3d
+known host general-pc bc:ae:c5:7f:ce:09
+known host MBP-Makarov 78:31:c1:c9:b5:c6
+isolate-private
+dyndns profile _WEBADMIN
+!
+yandexdns
+    assign 74:d4:35:9d:f4:3d default
+    assign default
+!
+interface Switch0
+    port 4
+        mode access
+        access vlan 1
+    !
+    port 3
+        mode access
+        access vlan 1
+    !
+    port 2
+        mode access
+        access vlan 1
+    !
+    port 1
+        mode access
+        access vlan 1
+    !
+    port 0
+        mode access
+        access vlan 2
+    !
+    up
+!
+interface Switch0/VLAN1
+    description "Home VLAN"
+    security-level private
+    ip dhcp client dns-routes
+    ip dhcp client name-servers
+    up
+!
+interface Switch0/VLAN2
+    name ISP
+    description "Broadband connection"
+    mac address factory wan
+    security-level public
+    ip dhcp client dns-routes
+    ip dhcp client name-servers
+    igmp upstream
+    ipv6 address auto
+    ipv6 prefix auto
+    ipv6 name-servers auto
+    up
+!
+interface WifiMaster0
+    country-code RU
+    compatibility BGN
+    power 100
+    up
+!
+interface WifiMaster0/AccessPoint0
+    name AccessPoint
+    description "Wi-Fi access point"
+    mac access-list type none
+    security-level private
+    wps
+    authentication wpa-psk ns3 ryYofzkVtJdZayw+pOV/aSBo
+    encryption enable
+    encryption wpa2
+    ip dhcp client dns-routes
+    ip dhcp client name-servers
+    ssid Makarov2
+    wmm
+    up
+!
+interface WifiMaster0/AccessPoint1
+    name GuestWiFi
+    description "Guest access point"
+    mac access-list type none
+    security-level private
+    ip address 10.1.30.1 255.255.255.0
+    ip dhcp client dns-routes
+    ip dhcp client name-servers
+    ssid Guest
+    wmm
+    down
+!
+interface WifiMaster0/AccessPoint2
+    mac access-list type none
+    security-level public
+    ip dhcp client dns-routes
+    ip dhcp client name-servers
+    down
+!
+interface WifiMaster0/AccessPoint3
+    mac access-list type none
+    security-level public
+    ip dhcp client dns-routes
+    ip dhcp client name-servers
+    down
+!
+interface WifiMaster0/WifiStation0
+    security-level public
+    encryption disable
+    ip address dhcp
+    ip dhcp client dns-routes
+    ip dhcp client name-servers
+    down
+!
+interface Bridge0
+    name Home
+    description "Home network"
+    inherit Switch0/VLAN1
+    include AccessPoint
+    security-level private
+    ip address 192.168.1.1 255.255.255.0
+    ip dhcp client dns-routes
+    ip dhcp client name-servers
+    igmp downstream
+    up
+!
+interface PPPoE0
+    description "Internet (NetFriend)"
+    no ipv6cp
+    lcp echo 30 3
+    ipcp default-route
+    ipcp name-servers
+    ipcp dns-routes
+    no ccp
+    security-level public
+    authentication identity M537048
+    authentication password ns3 RsZR4kc+QM97NZboXjMvNXa9
+    authentication pap
+    authentication chap
+    authentication mschap
+    authentication mschap-v2
+    ip dhcp client dns-routes
+    ip dhcp client name-servers
+    ip mtu 1400
+    ip global 1000
+    ip tcp adjust-mss pmtu
+    connect via ISP
+    up
+!
+ip dhcp pool _WEBADMIN
+    range 192.168.1.33 192.168.1.52
+    bind Home
+    enable
+!
+ip dhcp pool _WEBADMIN_GUEST_AP
+    range 10.1.30.33 10.1.30.52
+    bind GuestWiFi
+    enable
+!
+ip dhcp host 74:d4:35:9d:f4:3d 192.168.1.40
+ip dhcp host bc:ae:c5:7f:ce:09 192.168.1.48
+ip dhcp host 78:31:c1:c9:b5:c6 192.168.1.50
+ip nat Home
+ip nat GuestWiFi
+ip static tcp PPPoE0 21 192.168.1.40 21 !ftp
+ip static tcp PPPoE0 1488 192.168.1.40 1488 !http
+ip static tcp PPPoE0 3000 192.168.1.50 3000 !http
+ipv6 subnet Default
+    bind Home
+    number 0
+    mode slaac
+    debug
+!
+ipv6 local-prefix default
+ppe
+upnp lan Home
+torrent
+    rpc-port 8090
+    peer-port 51413
+!
+user admin
+    password md5 347ba5f2d4a54e4f4b185fd0864c44f5
+    password nt 4289805529175a4b340e9cd6a3c6fdd1
+    tag cli
+    tag http
+    tag ftp
+    tag cifs
+    tag printers
+    tag torrent
+!
+service dhcp
+service dns-proxy
+service igmp-proxy
+service ftp
+service cifs
+service http
+service telnet
+service ntp-client
+service upnp
+cifs
+    automount
+    permissive
+!
+dlna
+    interface Home
+!
+printer 04e8:341b
+    name "Samsung SCX-4200"
+    type cifs
+    port 9100
+    bidirectional
+!
+easyconfig check
+    period 15
+    max-fails 3
+    host ya.ru
+    host mail.ru
+    host google.ru
+!
+!

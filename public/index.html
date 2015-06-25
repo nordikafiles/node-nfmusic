@@ -1,0 +1,148 @@
+<!doctype html>
+<html ng-app='nfmusic'></html>
+<head>
+  <script src='./js/iced.js'></script>
+  <script src='./js/ChromeExtension.js'></script>
+  <meta charset='UTF-8'>
+  <title>{{nowPlaying}}nfmusic</title>
+  <script src='/js/define.js'></script>
+  <link href='/css/foundation.min.css' rel='stylesheet'>
+  <link href='/css/normalize.css' rel='stylesheet'>
+  <link href='/css/app.css' rel='stylesheet'>
+  <link href='data:text/css;base64,LmJ1YmJsaW5nRyB7DQp0ZXh0LWFsaWduOiBjZW50ZXI7DQp3aWR0aDo4MHB4Ow0KaGVpZ2h0OjUwcHg7DQp9DQoNCi5idWJibGluZ0cgc3BhbiB7DQpkaXNwbGF5OiBpbmxpbmUtYmxvY2s7DQp2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlOw0Kd2lkdGg6IDEwcHg7DQpoZWlnaHQ6IDEwcHg7DQptYXJnaW46IDI1cHggYXV0bzsNCmJhY2tncm91bmQ6ICNGRkZGRkY7DQotbW96LWJvcmRlci1yYWRpdXM6IDUwcHg7DQotbW96LWFuaW1hdGlvbjogYnViYmxpbmdHIDEuM3MgaW5maW5pdGUgYWx0ZXJuYXRlOw0KLXdlYmtpdC1ib3JkZXItcmFkaXVzOiA1MHB4Ow0KLXdlYmtpdC1hbmltYXRpb246IGJ1YmJsaW5nRyAxLjNzIGluZmluaXRlIGFsdGVybmF0ZTsNCi1tcy1ib3JkZXItcmFkaXVzOiA1MHB4Ow0KLW1zLWFuaW1hdGlvbjogYnViYmxpbmdHIDEuM3MgaW5maW5pdGUgYWx0ZXJuYXRlOw0KLW8tYm9yZGVyLXJhZGl1czogNTBweDsNCi1vLWFuaW1hdGlvbjogYnViYmxpbmdHIDEuM3MgaW5maW5pdGUgYWx0ZXJuYXRlOw0KYm9yZGVyLXJhZGl1czogNTBweDsNCmFuaW1hdGlvbjogYnViYmxpbmdHIDEuM3MgaW5maW5pdGUgYWx0ZXJuYXRlOw0KfQ0KDQojYnViYmxpbmdHXzEgew0KLW1vei1hbmltYXRpb24tZGVsYXk6IDBzOw0KLXdlYmtpdC1hbmltYXRpb24tZGVsYXk6IDBzOw0KLW1zLWFuaW1hdGlvbi1kZWxheTogMHM7DQotby1hbmltYXRpb24tZGVsYXk6IDBzOw0KYW5pbWF0aW9uLWRlbGF5OiAwczsNCn0NCg0KI2J1YmJsaW5nR18yIHsNCi1tb3otYW5pbWF0aW9uLWRlbGF5OiAwLjM5czsNCi13ZWJraXQtYW5pbWF0aW9uLWRlbGF5OiAwLjM5czsNCi1tcy1hbmltYXRpb24tZGVsYXk6IDAuMzlzOw0KLW8tYW5pbWF0aW9uLWRlbGF5OiAwLjM5czsNCmFuaW1hdGlvbi1kZWxheTogMC4zOXM7DQp9DQoNCiNidWJibGluZ0dfMyB7DQotbW96LWFuaW1hdGlvbi1kZWxheTogMC43OHM7DQotd2Via2l0LWFuaW1hdGlvbi1kZWxheTogMC43OHM7DQotbXMtYW5pbWF0aW9uLWRlbGF5OiAwLjc4czsNCi1vLWFuaW1hdGlvbi1kZWxheTogMC43OHM7DQphbmltYXRpb24tZGVsYXk6IDAuNzhzOw0KfQ0KDQpALW1vei1rZXlmcmFtZXMgYnViYmxpbmdHIHsNCjAlIHsNCndpZHRoOiAxMHB4Ow0KaGVpZ2h0OiAxMHB4Ow0KYmFja2dyb3VuZC1jb2xvcjojRkZGRkZGOw0KLW1vei10cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMCk7DQp9DQoNCjEwMCUgew0Kd2lkdGg6IDI0cHg7DQpoZWlnaHQ6IDI0cHg7DQpiYWNrZ3JvdW5kLWNvbG9yOiNGRkZGRkY7DQotbW96LXRyYW5zZm9ybTogdHJhbnNsYXRlWSgtMjFweCk7DQp9DQoNCn0NCg0KQC13ZWJraXQta2V5ZnJhbWVzIGJ1YmJsaW5nRyB7DQowJSB7DQp3aWR0aDogMTBweDsNCmhlaWdodDogMTBweDsNCmJhY2tncm91bmQtY29sb3I6I0ZGRkZGRjsNCi13ZWJraXQtdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDApOw0KfQ0KDQoxMDAlIHsNCndpZHRoOiAyNHB4Ow0KaGVpZ2h0OiAyNHB4Ow0KYmFja2dyb3VuZC1jb2xvcjojRkZGRkZGOw0KLXdlYmtpdC10cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTIxcHgpOw0KfQ0KDQp9DQoNCkAtbXMta2V5ZnJhbWVzIGJ1YmJsaW5nRyB7DQowJSB7DQp3aWR0aDogMTBweDsNCmhlaWdodDogMTBweDsNCmJhY2tncm91bmQtY29sb3I6I0ZGRkZGRjsNCi1tcy10cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMCk7DQp9DQoNCjEwMCUgew0Kd2lkdGg6IDI0cHg7DQpoZWlnaHQ6IDI0cHg7DQpiYWNrZ3JvdW5kLWNvbG9yOiNGRkZGRkY7DQotbXMtdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC0yMXB4KTsNCn0NCg0KfQ0KDQpALW8ta2V5ZnJhbWVzIGJ1YmJsaW5nRyB7DQowJSB7DQp3aWR0aDogMTBweDsNCmhlaWdodDogMTBweDsNCmJhY2tncm91bmQtY29sb3I6I0ZGRkZGRjsNCi1vLXRyYW5zZm9ybTogdHJhbnNsYXRlWSgwKTsNCn0NCg0KMTAwJSB7DQp3aWR0aDogMjRweDsNCmhlaWdodDogMjRweDsNCmJhY2tncm91bmQtY29sb3I6I0ZGRkZGRjsNCi1vLXRyYW5zZm9ybTogdHJhbnNsYXRlWSgtMjFweCk7DQp9DQoNCn0NCg0KQGtleWZyYW1lcyBidWJibGluZ0cgew0KMCUgew0Kd2lkdGg6IDEwcHg7DQpoZWlnaHQ6IDEwcHg7DQpiYWNrZ3JvdW5kLWNvbG9yOiNGRkZGRkY7DQp0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMCk7DQp9DQoNCjEwMCUgew0Kd2lkdGg6IDI0cHg7DQpoZWlnaHQ6IDI0cHg7DQpiYWNrZ3JvdW5kLWNvbG9yOiNGRkZGRkY7DQp0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTIxcHgpOw0KfQ0KDQp9DQo=' rel='stylesheet'>
+  <link href='data:text/css;base64,LyoqCiAqIEtFWVMuY3NzCiAqCiAqIEEgc2ltcGxlIHN0eWxlc2hlZXQgZm9yIHJlbmRlcmluZyBiZWF1dGlmdWwga2V5Ym9hcmQtc3R5bGUgZWxlbWVudHMuCiAqCiAqIEF1dGhvcjogIE1pY2hhZWwgSMO8bmVidXJnCiAqIFdlYnNpdGU6IGh0dHA6Ly9taWNoYWVsaHVlLmNvbS9rZXlzY3NzCiAqIExpY2Vuc2U6IE1JVCBMaWNlbnNlIChzZWUgTElDRU5TRS50eHQpCiAqLwoKLyogQmFzZSBzdHlsZSwgZXNzZW50aWFsIGZvciBldmVyeSBrZXkuICovCmtiZCwgLmtleSB7CglkaXNwbGF5OiBpbmxpbmU7CglkaXNwbGF5OiBpbmxpbmUtYmxvY2s7CgltaW4td2lkdGg6IDFlbTsKCXBhZGRpbmc6IC4yZW0gLjNlbTsKCWZvbnQ6IG5vcm1hbCAuODVlbS8xICJMdWNpZGEgR3JhbmRlIiwgTHVjaWRhLCBBcmlhbCwgc2Fucy1zZXJpZjsKCXRleHQtYWxpZ246IGNlbnRlcjsKCXRleHQtZGVjb3JhdGlvbjogbm9uZTsKCS1tb3otYm9yZGVyLXJhZGl1czogLjNlbTsKCS13ZWJraXQtYm9yZGVyLXJhZGl1czogLjNlbTsKCWJvcmRlci1yYWRpdXM6IC4zZW07Cglib3JkZXI6IG5vbmU7CgljdXJzb3I6IGRlZmF1bHQ7CgktbW96LXVzZXItc2VsZWN0OiBub25lOwoJLXdlYmtpdC11c2VyLXNlbGVjdDogbm9uZTsKCXVzZXItc2VsZWN0OiBub25lOwp9CmtiZFt0aXRsZV0sIC5rZXlbdGl0bGVdIHsKCWN1cnNvcjogaGVscDsKfQoKLyogRGFyayBzdHlsZSBmb3IgZGlzcGxheSBvbiBsaWdodCBiYWNrZ3JvdW5kLiBUaGlzIGlzIHRoZSBkZWZhdWx0IHN0eWxlLiAqLwprYmQsIGtiZC5kYXJrLCAuZGFyay1rZXlzIGtiZCwgLmtleSwgLmtleS5kYXJrLCAuZGFyay1rZXlzIC5rZXkgewoJYmFja2dyb3VuZDogcmdiKDgwLCA4MCwgODApOwoJYmFja2dyb3VuZDogLW1vei1saW5lYXItZ3JhZGllbnQodG9wLCByZ2IoNjAsIDYwLCA2MCksIHJnYig4MCwgODAsIDgwKSk7CgliYWNrZ3JvdW5kOiAtd2Via2l0LWdyYWRpZW50KGxpbmVhciwgbGVmdCB0b3AsIGxlZnQgYm90dG9tLCBmcm9tKHJnYig2MCwgNjAsIDYwKSksIHRvKHJnYig4MCwgODAsIDgwKSkpOwoJY29sb3I6IHJnYigyNTAsIDI1MCwgMjUwKTsKCXRleHQtc2hhZG93OiAtMXB4IC0xcHggMCByZ2IoNzAsIDcwLCA3MCk7CgktbW96LWJveC1zaGFkb3c6IGluc2V0IDAgMCAxcHggcmdiKDE1MCwgMTUwLCAxNTApLCBpbnNldCAwIC0uMDVlbSAuNGVtIHJnYig4MCwgODAsIDgwKSwgMCAuMWVtIDAgcmdiKDMwLCAzMCwgMzApLCAwIC4xZW0gLjFlbSByZ2JhKDAsIDAsIDAsIC4zKTsKCS13ZWJraXQtYm94LXNoYWRvdzogaW5zZXQgMCAwIDFweCByZ2IoMTUwLCAxNTAsIDE1MCksIGluc2V0IDAgLS4wNWVtIC40ZW0gcmdiKDgwLCA4MCwgODApLCAwIC4xZW0gMCByZ2IoMzAsIDMwLCAzMCksIDAgLjFlbSAuMWVtIHJnYmEoMCwgMCwgMCwgLjMpOwoJYm94LXNoYWRvdzogaW5zZXQgMCAwIDFweCByZ2IoMTUwLCAxNTAsIDE1MCksIGluc2V0IDAgLS4wNWVtIC40ZW0gcmdiKDgwLCA4MCwgODApLCAwIC4xZW0gMCByZ2IoMzAsIDMwLCAzMCksIDAgLjFlbSAuMWVtIHJnYmEoMCwgMCwgMCwgLjMpOwp9CgovKiBMaWdodCBzdHlsZSBmb3IgZGlzcGxheSBvbiBkYXJrIGJhY2tncm91bmQuICovCmtiZC5saWdodCwgLmxpZ2h0LWtleXMga2JkLCAua2V5LmxpZ2h0LCAubGlnaHQta2V5cyAua2V5IHsKCWJhY2tncm91bmQ6IHJnYigyNTAsIDI1MCwgMjUwKTsKCWJhY2tncm91bmQ6IC1tb3otbGluZWFyLWdyYWRpZW50KHRvcCwgcmdiKDIxMCwgMjEwLCAyMTApLCByZ2IoMjU1LCAyNTUsIDI1NSkpOwoJYmFja2dyb3VuZDogLXdlYmtpdC1ncmFkaWVudChsaW5lYXIsIGxlZnQgdG9wLCBsZWZ0IGJvdHRvbSwgZnJvbShyZ2IoMjEwLCAyMTAsIDIxMCkpLCB0byhyZ2IoMjU1LCAyNTUsIDI1NSkpKTsKCWNvbG9yOiAgcmdiKDUwLCA1MCwgNTApOwoJdGV4dC1zaGFkb3c6IDAgMCAycHggcmdiKDI1NSwgMjU1LCAyNTUpOwoJLW1vei1ib3gtc2hhZG93OiBpbnNldCAwIDAgMXB4IHJnYigyNTUsIDI1NSwgMjU1KSwgaW5zZXQgMCAwIC40ZW0gcmdiKDIwMCwgMjAwLCAyMDApLCAwIC4xZW0gMCByZ2IoMTMwLCAxMzAsIDEzMCksIDAgLjExZW0gMCByZ2JhKDAsIDAsIDAsIC40KSwgMCAuMWVtIC4xMWVtIHJnYmEoMCwgMCwgMCwgLjkpOwoJLXdlYmtpdC1ib3gtc2hhZG93OiBpbnNldCAwIDAgMXB4IHJnYigyNTUsIDI1NSwgMjU1KSwgaW5zZXQgMCAwIC40ZW0gcmdiKDIwMCwgMjAwLCAyMDApLCAwIC4xZW0gMCByZ2IoMTMwLCAxMzAsIDEzMCksIDAgLjExZW0gMCByZ2JhKDAsIDAsIDAsIC40KSwgMCAuMWVtIC4xMWVtIHJnYmEoMCwgMCwgMCwgLjkpOwoJYm94LXNoYWRvdzogaW5zZXQgMCAwIDFweCByZ2IoMjU1LCAyNTUsIDI1NSksIGluc2V0IDAgMCAuNGVtIHJnYigyMDAsIDIwMCwgMjAwKSwgMCAuMWVtIDAgcmdiKDEzMCwgMTMwLCAxMzApLCAwIC4xMWVtIDAgcmdiYSgwLCAwLCAwLCAuNCksIDAgLjFlbSAuMTFlbSByZ2JhKDAsIDAsIDAsIC45KTsKfQ==' rel='stylesheet'>
+  <script src='/js/jquery-2.1.1.min.js'></script>
+  <script src='https://code.jquery.com/ui/1.11.1/jquery-ui.min.js'></script>
+  <script src='/js/lang.js'></script>
+  <script src='/js/Auth.js'></script>
+  <script src='/js/id3.js'></script>
+  <script src='/js/foundation.min.js'></script>
+  <script src='/js/base64.js'></script>
+  <script src='/js/jsonp.js'></script>
+  <script src='/js/modal.js'></script>
+  <script src='/js/storageEvents.js'></script>
+</head>
+<body>
+  <iframe frameborder='0' id='sciframe' src='https://w.soundcloud.com/player/?url=' style='display: none'></iframe>
+  <!-- .vk-container -->
+  <!-- %img.vkbtn{:src => "/img/VK.png", :alt => ""}/ -->
+  <!-- .vk-tooltip Нажмите здесь для авторизации через ВКонтакте -->
+  <div class='nav-bar'>
+    <div class='nav-bar-search'>
+      <label for='nav-bar-search'>
+        <i class='search'></i>
+        <i class='clear' ng-class="searchInputFocus?'dark':'light'" ng-click="searchText = ''" ng-show='searchText.length &gt; 0'></i>
+      </label>
+      <input name='nav-bar-search' ng-blur='searchInputFocus = false' ng-focus='searchInputFocus = true' ng-model='searchText' placeholder='Search' type='text'>
+    </div>
+  </div>
+  <div class='musiclist hide' ng-controller='MusicListCtrl'>
+    <ul>
+      <li class='song' ng-click='play(song)' ng-repeat='song in playlist'>
+        <div class='play-pause-btn play' ng-class="{'pause': currentSong == song &amp;&amp; !paused}">
+          <i class='play-btn'></i>
+          <i class='pause-btn'></i>
+        </div>
+        <div class='title'>{{song.title}}</div>
+        <div class='artist'>{{song.artist}}</div>
+      </li>
+    </ul>
+  </div>
+  <div class='playlist' ng-class="{'show-playlist': show_playlist }" ng-controller='PlaylistCtrl'>
+    <ul>
+      <li ng-class='(track == player_playlist[currentSong])?"play":""' ng-click='play(player_playlist.indexOf(track))' ng-repeat='track in player_playlist'>
+        <span class='artist'>{{track.artist}}</span>
+        <span class='title'>{{track.title}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class='player' ng-class="{ show : !hidden, 'show-playlist': show_playlist }" ng-controller='PlayerCtrl'>
+    {{vk}}
+    <div class='cover-full-box' ng-class="{ 'show': coverFull }" ng-click='toggleCover()'></div>
+    <div class='player-content' ng-class="{'loading': playerLoading}">
+      <div class='controls-left'>
+        <div class='media-poster hide' ng-class="{ 'hide': !coverArt}" ng-click='toggleCover()'>
+          <img ng-src='{{coverArt}}'>
+        </div>
+        <div class='previous-btn player-link-btn' ng-class="currentSong == 0?'disabled':''" ng-click='prev()'>
+          <i></i>
+        </div>
+        <div class='play-btn player-link-btn' ng-click='play()' ng-show='paused'>
+          <i></i>
+        </div>
+        <div class='pause-btn player-link-btn' ng-click='pause()' ng-show='!paused'>
+          <i></i>
+        </div>
+        <div class='stop-btn player-link-btn' ng-click='stop()'>
+          <i></i>
+        </div>
+        <div class='next-btn player-link-btn' ng-class="currentSong == playlist.length-1?'disabled':''" ng-click='next()'>
+          <i></i>
+        </div>
+      </div>
+      <div class='controls-center'>
+        <div class='media-title'>
+          <div class='artist'>{{artist}}</div>
+          <div class='title'>{{title}}</div>
+        </div>
+        <div class='seek-bar-container'>
+          <div class='player-position'>{{position}}</div>
+          <div class='player-duration'>{{duration}}</div>
+          <div class='player-seek-bar'>
+            <div class='player-slider-track'>
+              <div class='player-slider-buffer'></div>
+              <div class='player-slider-progress'></div>
+              <div class='player-slider-loading'></div>
+              <div class='player-slider-thumb'></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='controls-right'>
+        <div class='start-stream-btn player-link-btn' ng-click='startStream()' ng-hide='now_streaming || !showStartStreamBtn'>
+          <i></i>
+        </div>
+        <div class='stop-stream-btn player-link-btn' ng-click='stopStream()' ng-show='now_streaming'>
+          <i></i>
+        </div>
+        <div class='playlist-btn player-link-btn' ng-click='showPlaylist()' ng-show='!show_playlist &amp;&amp; player_playlist.length &gt;0'>
+          <i></i>
+        </div>
+        <div class='hide-playlist-btn player-link-btn' ng-click='hidePlaylist()' ng-show='show_playlist'>
+          <i></i>
+        </div>
+        <div class='player-volume-slider player-seek-bar'>
+          <div class='player-slider-track'>
+            <div class='player-slider-progress' style='width: 10%'></div>
+            <div class='player-slider-thumb' style='left: 10%'></div>
+          </div>
+        </div>
+        <div class='volume-btn player-link-btn high' ng-click='mute()'>
+          <i class='volume-high' ng-show='volume &gt;= 0.5'></i>
+          <i class='volume-low' ng-show='volume &lt; 0.5 &amp;&amp; volume &gt;= 0.05'></i>
+          <i class='mute' ng-show='volume &lt; 0.05'></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='show' id='globalLoading'>
+    <div class='bubblingG'>
+      <span id='bubblingG_1'></span>
+      <span id='bubblingG_2'></span>
+      <span id='bubblingG_3'></span>
+    </div>
+  </div>
+  <!-- %input#fileDialog{:type => "file"}/ -->
+  <script src='https://w.soundcloud.com/player/api.js'></script>
+  <script src='/js/track.js'></script>
+  <script src='/js/player.js'></script>
+  <script src='/js/soundcloud.js'></script>
+  <script src='/js/angular.min.js'></script>
+  <script src='https://code.angularjs.org/1.3.1/angular-route.js'></script>
+  <script src='https://code.angularjs.org/1.3.1/angular-resource.js'></script>
+  <script src='/js/main.js'></script>
+  <script src='/js/modules.js'></script>
+  <script src='/js/MusicListCtrl.js'></script>
+  <script src='/js/controllers.js'></script>
+  <div id='port'></div>
+</body>

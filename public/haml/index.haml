@@ -1,0 +1,112 @@
+<!doctype html>
+%html(ng-app="nfmusic") 
+%head 
+	%script{:src => "./js/iced.js"}
+	%script{:src => "./js/ChromeExtension.js"}  
+	%meta{:charset => "UTF-8"}/ 
+	%title {{nowPlaying}}nfmusic
+	%script{:src => "/js/define.js"} 
+	%link{:rel => "stylesheet", :href => "/css/foundation.min.css"}/ 
+	%link{:rel => "stylesheet", :href => "/css/normalize.css"}/ 
+	%link{:rel => "stylesheet", :href => "/css/app.css"}/ 
+	%link{:rel => "stylesheet", :href => "data:text/css;base64,LmJ1YmJsaW5nRyB7DQp0ZXh0LWFsaWduOiBjZW50ZXI7DQp3aWR0aDo4MHB4Ow0KaGVpZ2h0OjUwcHg7DQp9DQoNCi5idWJibGluZ0cgc3BhbiB7DQpkaXNwbGF5OiBpbmxpbmUtYmxvY2s7DQp2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlOw0Kd2lkdGg6IDEwcHg7DQpoZWlnaHQ6IDEwcHg7DQptYXJnaW46IDI1cHggYXV0bzsNCmJhY2tncm91bmQ6ICNGRkZGRkY7DQotbW96LWJvcmRlci1yYWRpdXM6IDUwcHg7DQotbW96LWFuaW1hdGlvbjogYnViYmxpbmdHIDEuM3MgaW5maW5pdGUgYWx0ZXJuYXRlOw0KLXdlYmtpdC1ib3JkZXItcmFkaXVzOiA1MHB4Ow0KLXdlYmtpdC1hbmltYXRpb246IGJ1YmJsaW5nRyAxLjNzIGluZmluaXRlIGFsdGVybmF0ZTsNCi1tcy1ib3JkZXItcmFkaXVzOiA1MHB4Ow0KLW1zLWFuaW1hdGlvbjogYnViYmxpbmdHIDEuM3MgaW5maW5pdGUgYWx0ZXJuYXRlOw0KLW8tYm9yZGVyLXJhZGl1czogNTBweDsNCi1vLWFuaW1hdGlvbjogYnViYmxpbmdHIDEuM3MgaW5maW5pdGUgYWx0ZXJuYXRlOw0KYm9yZGVyLXJhZGl1czogNTBweDsNCmFuaW1hdGlvbjogYnViYmxpbmdHIDEuM3MgaW5maW5pdGUgYWx0ZXJuYXRlOw0KfQ0KDQojYnViYmxpbmdHXzEgew0KLW1vei1hbmltYXRpb24tZGVsYXk6IDBzOw0KLXdlYmtpdC1hbmltYXRpb24tZGVsYXk6IDBzOw0KLW1zLWFuaW1hdGlvbi1kZWxheTogMHM7DQotby1hbmltYXRpb24tZGVsYXk6IDBzOw0KYW5pbWF0aW9uLWRlbGF5OiAwczsNCn0NCg0KI2J1YmJsaW5nR18yIHsNCi1tb3otYW5pbWF0aW9uLWRlbGF5OiAwLjM5czsNCi13ZWJraXQtYW5pbWF0aW9uLWRlbGF5OiAwLjM5czsNCi1tcy1hbmltYXRpb24tZGVsYXk6IDAuMzlzOw0KLW8tYW5pbWF0aW9uLWRlbGF5OiAwLjM5czsNCmFuaW1hdGlvbi1kZWxheTogMC4zOXM7DQp9DQoNCiNidWJibGluZ0dfMyB7DQotbW96LWFuaW1hdGlvbi1kZWxheTogMC43OHM7DQotd2Via2l0LWFuaW1hdGlvbi1kZWxheTogMC43OHM7DQotbXMtYW5pbWF0aW9uLWRlbGF5OiAwLjc4czsNCi1vLWFuaW1hdGlvbi1kZWxheTogMC43OHM7DQphbmltYXRpb24tZGVsYXk6IDAuNzhzOw0KfQ0KDQpALW1vei1rZXlmcmFtZXMgYnViYmxpbmdHIHsNCjAlIHsNCndpZHRoOiAxMHB4Ow0KaGVpZ2h0OiAxMHB4Ow0KYmFja2dyb3VuZC1jb2xvcjojRkZGRkZGOw0KLW1vei10cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMCk7DQp9DQoNCjEwMCUgew0Kd2lkdGg6IDI0cHg7DQpoZWlnaHQ6IDI0cHg7DQpiYWNrZ3JvdW5kLWNvbG9yOiNGRkZGRkY7DQotbW96LXRyYW5zZm9ybTogdHJhbnNsYXRlWSgtMjFweCk7DQp9DQoNCn0NCg0KQC13ZWJraXQta2V5ZnJhbWVzIGJ1YmJsaW5nRyB7DQowJSB7DQp3aWR0aDogMTBweDsNCmhlaWdodDogMTBweDsNCmJhY2tncm91bmQtY29sb3I6I0ZGRkZGRjsNCi13ZWJraXQtdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDApOw0KfQ0KDQoxMDAlIHsNCndpZHRoOiAyNHB4Ow0KaGVpZ2h0OiAyNHB4Ow0KYmFja2dyb3VuZC1jb2xvcjojRkZGRkZGOw0KLXdlYmtpdC10cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTIxcHgpOw0KfQ0KDQp9DQoNCkAtbXMta2V5ZnJhbWVzIGJ1YmJsaW5nRyB7DQowJSB7DQp3aWR0aDogMTBweDsNCmhlaWdodDogMTBweDsNCmJhY2tncm91bmQtY29sb3I6I0ZGRkZGRjsNCi1tcy10cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMCk7DQp9DQoNCjEwMCUgew0Kd2lkdGg6IDI0cHg7DQpoZWlnaHQ6IDI0cHg7DQpiYWNrZ3JvdW5kLWNvbG9yOiNGRkZGRkY7DQotbXMtdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC0yMXB4KTsNCn0NCg0KfQ0KDQpALW8ta2V5ZnJhbWVzIGJ1YmJsaW5nRyB7DQowJSB7DQp3aWR0aDogMTBweDsNCmhlaWdodDogMTBweDsNCmJhY2tncm91bmQtY29sb3I6I0ZGRkZGRjsNCi1vLXRyYW5zZm9ybTogdHJhbnNsYXRlWSgwKTsNCn0NCg0KMTAwJSB7DQp3aWR0aDogMjRweDsNCmhlaWdodDogMjRweDsNCmJhY2tncm91bmQtY29sb3I6I0ZGRkZGRjsNCi1vLXRyYW5zZm9ybTogdHJhbnNsYXRlWSgtMjFweCk7DQp9DQoNCn0NCg0KQGtleWZyYW1lcyBidWJibGluZ0cgew0KMCUgew0Kd2lkdGg6IDEwcHg7DQpoZWlnaHQ6IDEwcHg7DQpiYWNrZ3JvdW5kLWNvbG9yOiNGRkZGRkY7DQp0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMCk7DQp9DQoNCjEwMCUgew0Kd2lkdGg6IDI0cHg7DQpoZWlnaHQ6IDI0cHg7DQpiYWNrZ3JvdW5kLWNvbG9yOiNGRkZGRkY7DQp0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTIxcHgpOw0KfQ0KDQp9DQo="}/ 
+	%link{:rel => "stylesheet", :href => "data:text/css;base64,LyoqCiAqIEtFWVMuY3NzCiAqCiAqIEEgc2ltcGxlIHN0eWxlc2hlZXQgZm9yIHJlbmRlcmluZyBiZWF1dGlmdWwga2V5Ym9hcmQtc3R5bGUgZWxlbWVudHMuCiAqCiAqIEF1dGhvcjogIE1pY2hhZWwgSMO8bmVidXJnCiAqIFdlYnNpdGU6IGh0dHA6Ly9taWNoYWVsaHVlLmNvbS9rZXlzY3NzCiAqIExpY2Vuc2U6IE1JVCBMaWNlbnNlIChzZWUgTElDRU5TRS50eHQpCiAqLwoKLyogQmFzZSBzdHlsZSwgZXNzZW50aWFsIGZvciBldmVyeSBrZXkuICovCmtiZCwgLmtleSB7CglkaXNwbGF5OiBpbmxpbmU7CglkaXNwbGF5OiBpbmxpbmUtYmxvY2s7CgltaW4td2lkdGg6IDFlbTsKCXBhZGRpbmc6IC4yZW0gLjNlbTsKCWZvbnQ6IG5vcm1hbCAuODVlbS8xICJMdWNpZGEgR3JhbmRlIiwgTHVjaWRhLCBBcmlhbCwgc2Fucy1zZXJpZjsKCXRleHQtYWxpZ246IGNlbnRlcjsKCXRleHQtZGVjb3JhdGlvbjogbm9uZTsKCS1tb3otYm9yZGVyLXJhZGl1czogLjNlbTsKCS13ZWJraXQtYm9yZGVyLXJhZGl1czogLjNlbTsKCWJvcmRlci1yYWRpdXM6IC4zZW07Cglib3JkZXI6IG5vbmU7CgljdXJzb3I6IGRlZmF1bHQ7CgktbW96LXVzZXItc2VsZWN0OiBub25lOwoJLXdlYmtpdC11c2VyLXNlbGVjdDogbm9uZTsKCXVzZXItc2VsZWN0OiBub25lOwp9CmtiZFt0aXRsZV0sIC5rZXlbdGl0bGVdIHsKCWN1cnNvcjogaGVscDsKfQoKLyogRGFyayBzdHlsZSBmb3IgZGlzcGxheSBvbiBsaWdodCBiYWNrZ3JvdW5kLiBUaGlzIGlzIHRoZSBkZWZhdWx0IHN0eWxlLiAqLwprYmQsIGtiZC5kYXJrLCAuZGFyay1rZXlzIGtiZCwgLmtleSwgLmtleS5kYXJrLCAuZGFyay1rZXlzIC5rZXkgewoJYmFja2dyb3VuZDogcmdiKDgwLCA4MCwgODApOwoJYmFja2dyb3VuZDogLW1vei1saW5lYXItZ3JhZGllbnQodG9wLCByZ2IoNjAsIDYwLCA2MCksIHJnYig4MCwgODAsIDgwKSk7CgliYWNrZ3JvdW5kOiAtd2Via2l0LWdyYWRpZW50KGxpbmVhciwgbGVmdCB0b3AsIGxlZnQgYm90dG9tLCBmcm9tKHJnYig2MCwgNjAsIDYwKSksIHRvKHJnYig4MCwgODAsIDgwKSkpOwoJY29sb3I6IHJnYigyNTAsIDI1MCwgMjUwKTsKCXRleHQtc2hhZG93OiAtMXB4IC0xcHggMCByZ2IoNzAsIDcwLCA3MCk7CgktbW96LWJveC1zaGFkb3c6IGluc2V0IDAgMCAxcHggcmdiKDE1MCwgMTUwLCAxNTApLCBpbnNldCAwIC0uMDVlbSAuNGVtIHJnYig4MCwgODAsIDgwKSwgMCAuMWVtIDAgcmdiKDMwLCAzMCwgMzApLCAwIC4xZW0gLjFlbSByZ2JhKDAsIDAsIDAsIC4zKTsKCS13ZWJraXQtYm94LXNoYWRvdzogaW5zZXQgMCAwIDFweCByZ2IoMTUwLCAxNTAsIDE1MCksIGluc2V0IDAgLS4wNWVtIC40ZW0gcmdiKDgwLCA4MCwgODApLCAwIC4xZW0gMCByZ2IoMzAsIDMwLCAzMCksIDAgLjFlbSAuMWVtIHJnYmEoMCwgMCwgMCwgLjMpOwoJYm94LXNoYWRvdzogaW5zZXQgMCAwIDFweCByZ2IoMTUwLCAxNTAsIDE1MCksIGluc2V0IDAgLS4wNWVtIC40ZW0gcmdiKDgwLCA4MCwgODApLCAwIC4xZW0gMCByZ2IoMzAsIDMwLCAzMCksIDAgLjFlbSAuMWVtIHJnYmEoMCwgMCwgMCwgLjMpOwp9CgovKiBMaWdodCBzdHlsZSBmb3IgZGlzcGxheSBvbiBkYXJrIGJhY2tncm91bmQuICovCmtiZC5saWdodCwgLmxpZ2h0LWtleXMga2JkLCAua2V5LmxpZ2h0LCAubGlnaHQta2V5cyAua2V5IHsKCWJhY2tncm91bmQ6IHJnYigyNTAsIDI1MCwgMjUwKTsKCWJhY2tncm91bmQ6IC1tb3otbGluZWFyLWdyYWRpZW50KHRvcCwgcmdiKDIxMCwgMjEwLCAyMTApLCByZ2IoMjU1LCAyNTUsIDI1NSkpOwoJYmFja2dyb3VuZDogLXdlYmtpdC1ncmFkaWVudChsaW5lYXIsIGxlZnQgdG9wLCBsZWZ0IGJvdHRvbSwgZnJvbShyZ2IoMjEwLCAyMTAsIDIxMCkpLCB0byhyZ2IoMjU1LCAyNTUsIDI1NSkpKTsKCWNvbG9yOiAgcmdiKDUwLCA1MCwgNTApOwoJdGV4dC1zaGFkb3c6IDAgMCAycHggcmdiKDI1NSwgMjU1LCAyNTUpOwoJLW1vei1ib3gtc2hhZG93OiBpbnNldCAwIDAgMXB4IHJnYigyNTUsIDI1NSwgMjU1KSwgaW5zZXQgMCAwIC40ZW0gcmdiKDIwMCwgMjAwLCAyMDApLCAwIC4xZW0gMCByZ2IoMTMwLCAxMzAsIDEzMCksIDAgLjExZW0gMCByZ2JhKDAsIDAsIDAsIC40KSwgMCAuMWVtIC4xMWVtIHJnYmEoMCwgMCwgMCwgLjkpOwoJLXdlYmtpdC1ib3gtc2hhZG93OiBpbnNldCAwIDAgMXB4IHJnYigyNTUsIDI1NSwgMjU1KSwgaW5zZXQgMCAwIC40ZW0gcmdiKDIwMCwgMjAwLCAyMDApLCAwIC4xZW0gMCByZ2IoMTMwLCAxMzAsIDEzMCksIDAgLjExZW0gMCByZ2JhKDAsIDAsIDAsIC40KSwgMCAuMWVtIC4xMWVtIHJnYmEoMCwgMCwgMCwgLjkpOwoJYm94LXNoYWRvdzogaW5zZXQgMCAwIDFweCByZ2IoMjU1LCAyNTUsIDI1NSksIGluc2V0IDAgMCAuNGVtIHJnYigyMDAsIDIwMCwgMjAwKSwgMCAuMWVtIDAgcmdiKDEzMCwgMTMwLCAxMzApLCAwIC4xMWVtIDAgcmdiYSgwLCAwLCAwLCAuNCksIDAgLjFlbSAuMTFlbSByZ2JhKDAsIDAsIDAsIC45KTsKfQ=="}/ 
+	%script{:src => "/js/jquery-2.1.1.min.js"} 
+	%script{:src => "https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"} 
+	%script{:src => "/js/lang.js"} 
+	%script{:src => "/js/Auth.js"} 
+	%script{:src => "/js/id3.js"} 
+	%script{:src => "/js/foundation.min.js"}
+	%script{:src => "/js/base64.js"} 
+	%script{:src => "/js/jsonp.js"} 
+	%script{:src => "/js/modal.js"} 
+	%script{:src => "/js/storageEvents.js"} 
+%body
+	%iframe#sciframe{:src => "https://w.soundcloud.com/player/?url=", :frameborder => "0", :style => "display: none"}
+	/ .vk-container
+	/ 	%img.vkbtn{:src => "/img/VK.png", :alt => ""}/ 
+	/ 	.vk-tooltip Нажмите здесь для авторизации через ВКонтакте
+	.nav-bar
+		.nav-bar-search
+			%label{:for => "nav-bar-search"} 
+				%i.search
+				%i.clear(ng-show="searchText.length > 0" ng-click="searchText = ''" ng-class="searchInputFocus?'dark':'light'")
+			%input(ng-model="searchText" ng-focus="searchInputFocus = true" ng-blur="searchInputFocus = false" type = "text" placeholder = "Search" name = "nav-bar-search")
+	.musiclist.hide(ng-controller="MusicListCtrl")
+		%ul 
+			%li.song(ng-repeat="song in playlist" ng-click="play(song)")
+				.play-pause-btn.play(ng-class="{'pause': currentSong == song && !paused}")
+					%i.play-btn
+					%i.pause-btn
+				.title {{song.title}}
+				.artist {{song.artist}}
+	.playlist(ng-class="{'show-playlist': show_playlist }" ng-controller="PlaylistCtrl")
+		%ul
+			%li(ng-repeat="track in player_playlist" ng-click="play(player_playlist.indexOf(track))" ng-class='(track == player_playlist[currentSong])?"play":""')
+				%span.artist {{track.artist}}
+				%span.title {{track.title}}
+	.player(ng-class="{ show : !hidden, 'show-playlist': show_playlist }" ng-controller="PlayerCtrl")
+		{{vk}}
+		.cover-full-box(ng-class="{ 'show': coverFull }" ng-click="toggleCover()")
+		.player-content(ng-class="{'loading': playerLoading}")
+			.controls-left
+				.media-poster.hide(ng-class="{ 'hide': !coverArt}" ng-click="toggleCover()")
+					%img(ng-src="{{coverArt}}")
+				.previous-btn.player-link-btn(ng-class="currentSong == 0?'disabled':''" ng-click="prev()")
+					%i
+				.play-btn.player-link-btn(ng-show="paused" ng-click="play()")
+					%i
+				.pause-btn.player-link-btn(ng-show="!paused" ng-click="pause()")
+					%i
+				.stop-btn.player-link-btn(ng-click="stop()")
+					%i
+				.next-btn.player-link-btn(ng-class="currentSong == playlist.length-1?'disabled':''" ng-click="next()")
+					%i
+			.controls-center
+				.media-title
+					.artist {{artist}}
+					.title {{title}}
+				.seek-bar-container
+					.player-position {{position}}
+					.player-duration {{duration}}
+					.player-seek-bar
+						.player-slider-track
+							.player-slider-buffer
+							.player-slider-progress
+							.player-slider-loading
+							.player-slider-thumb
+			.controls-right
+				.start-stream-btn.player-link-btn(ng-hide="now_streaming || !showStartStreamBtn" ng-click="startStream()")
+					%i
+				.stop-stream-btn.player-link-btn(ng-show="now_streaming" ng-click="stopStream()")
+					%i
+				.playlist-btn.player-link-btn(ng-show="!show_playlist && player_playlist.length >0" ng-click="showPlaylist()")
+					%i
+				.hide-playlist-btn.player-link-btn(ng-show="show_playlist" ng-click="hidePlaylist()")
+					%i
+				.player-volume-slider.player-seek-bar
+					.player-slider-track
+						.player-slider-progress(style="width: 10%")
+						.player-slider-thumb(style="left: 10%")
+				.volume-btn.player-link-btn.high(ng-click="mute()")
+					%i.volume-high(ng-show="volume >= 0.5")
+					%i.volume-low(ng-show="volume < 0.5 && volume >= 0.05")
+					%i.mute(ng-show="volume < 0.05")
+	#globalLoading.show
+		.bubblingG
+			%span#bubblingG_1
+			%span#bubblingG_2
+			%span#bubblingG_3
+	/ %input#fileDialog{:type => "file"}/ 
+	%script{:src => "https://w.soundcloud.com/player/api.js"} 
+	%script{:src => "/js/track.js"} 
+	%script{:src => "/js/player.js"} 
+	%script{:src => "/js/soundcloud.js"} 
+	%script{:src => "/js/angular.min.js"} 
+	%script{:src => "https://code.angularjs.org/1.3.1/angular-route.js"} 
+	%script{:src => "https://code.angularjs.org/1.3.1/angular-resource.js"} 
+	%script{:src => "/js/main.js"} 
+	%script{:src => "/js/modules.js"}
+	%script{:src => "/js/MusicListCtrl.js"} 
+	%script{:src => "/js/controllers.js"}  
+	#port

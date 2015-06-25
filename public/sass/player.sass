@@ -1,0 +1,395 @@
+$main-progress-color: #cc7b19
+$buffer-progress-color: #555
+$slider-background-color: #1f1f1f
+$background-color: #282828
+$border-color: #323232
+@font-face
+  font-family: "Glyphicons Regular"
+  src: url(/css/glyphicons-regular.woff)
+@font-face
+  font-family: open_sansregular
+  src: url(../fonts/opensans-regular-webfont.woff) format('woff')
+  font-weight: 400
+  font-style: normal
+@font-face 
+  font-family: open_sansbold
+  src: url(../fonts/opensans-bold-webfont.woff) format('woff')
+  font-weight: 400
+  font-style: normal
+
+.player.show
+  bottom: 0
+.cover-full-box
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: rgba(0,0,0,.8)
+  z-index: 2020
+  opacity: 0
+  transition: opacity .2s
+  cursor: pointer
+  visibility: hidden
+  &.show
+    visibility: visible
+    opacity: 1
+
+.player.show-playlist
+  bottom: 100%
+  margin-bottom: -80px
+.playlist.show-playlist
+  bottom: 0%
+.playlist
+  position: fixed
+  bottom: -100%
+  left: 0
+  right: 0
+  height: 100%
+  background: $slider-background-color
+  transition: bottom 0.2s cubic-bezier(0.25,0.25,0.75,0.75)
+  overflow-y: scroll
+
+  ul
+    width: 800px
+    margin: 0 auto
+    margin-top: 130px
+    color: #eee
+    list-style: none
+    margin-bottom: 50px
+    li
+      width: 100%
+      padding: 10px
+      cursor: pointer
+      .artist
+        color: #bbb
+        margin-right: 5px
+        &:before
+          font-family: 'Glyphicons Regular'
+          content: "\e185"
+          display: inline-block
+          margin-right: 10px
+          opacity: 0
+
+      .title
+        color: #777
+      &.selected
+        background: rgba(255, 255, 255, .2)
+      &:hover
+        background: rgba(255, 255, 255, .2)
+    li.play
+      .artist
+        &:before
+          opacity: 1
+
+.player
+  position: fixed
+  right: 0
+  left: 0
+  transition: bottom 0.2s cubic-bezier(0.25,0.25,0.75,0.75), margin-bottom 0.2s cubic-bezier(0.25,0.25,0.75,0.75)
+  bottom: -85px
+  z-index: 1010
+  background-color: $background-color
+  border-top: solid 1px $border-color
+  box-shadow: 0 0 0 3px rgba(0,0,0,.2)
+  .player-seek-bar
+    box-sizing: border-box
+    position: absolute
+    left: 80px
+    right: 80px
+    top: 0
+    height: 23px
+    cursor: pointer
+    &:active
+      .player-slider-thumb
+        opacity: 1
+        transform: scale(1.5)
+    &:hover .player-slider-thumb
+      opacity: 1
+    .player-slider-track
+      height: 5px
+      position: relative
+      top: 9px
+      background: #1F1F1F
+      border-radius: 2.5px
+
+      .player-slider-progress
+        background: $main-progress-color
+        border-radius: 2.5px
+        height: 5px
+        position: absolute
+        left: 0
+        top: 0
+      
+      .player-slider-buffer
+        position: absolute
+        left: 0
+        top: 0
+        border-radius: 2.5px
+        background: $buffer-progress-color
+        height: 5px
+  .player-content
+    &.loading
+      cursor: default !important
+      .aclick
+        display: block
+      .controls-center
+        .player-seek-bar
+          .player-slider-track
+            overflow: hidden
+            .player-slider-progress
+              display: none
+            .player-slider-buffer
+              display: none
+            .player-slider-thumb
+              display: none
+            .player-slider-loading
+              -webkit-animation: playerloadinganimation 2s infinite
+              animation: playerloadinganimation 2s infinite
+
+
+    height: 80px
+    color: #bbb
+    position: relative
+    .player-slider-thumb
+      border-radius: 6px
+      position: absolute
+      left: 0
+      top: -3.5px
+      width: 12px
+      height: 12px
+      margin-left: -6px
+      background: #fff
+      opacity: 0
+      transition: opacity 0.2s, transform 0.2s
+    .player-link-btn
+      float: left
+      color: #bbb
+      line-height: 84px
+      font-size: 24px
+      padding-left: 12px
+      padding-right: 12px
+      cursor: pointer
+      &:hover 
+        color: #fff
+      i
+        position: relative
+        top: 1px
+        display: inline-block
+        font-family: 'Glyphicons Regular'
+        font-style: normal
+        font-weight: 400
+        line-height: 1
+        -webkit-font-smoothing: antialiased
+        box-sizing: border-box
+    .controls-left
+      position: absolute
+      left: 0
+      bottom: 0
+      top: 0
+      width: 300px
+      box-sizing: border-box
+      .media-poster
+        float: left
+        width: 80px
+        height: 80px
+        background-color: $border-color
+        background-position: center
+        background-size: cover
+        background-image: url(blob:http%3A//127.0.0.1%3A32400/dc1af878-c44a-4cd0-9f62-d74115d4af63)
+        margin:
+          right: 24px
+        transition: margin-left 0.2s
+        cursor: pointer
+        img
+          min-height: 80px
+          max-height: 80%
+          height: 0%
+          transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53)
+          transition: width .2s ease, height .2s ease, left .2s ease, bottom .2s ease, transform .2s ease
+        &.fixed-pos img
+          position: fixed
+          z-index: 999999
+        &.hide
+          margin-left: -80px
+          display: block
+
+        &.full img
+          height: 100% !important
+          left: 50% !important
+          bottom: 50% !important
+          -webkit-transform: translateX(-50%) translateY(50%)
+          -moz-transform: translateX(-50%) translateY(50%)
+          -o-transform: translateX(-50%) translateY(50%)
+          -ms-transform: translateX(-50%) translateY(50%)
+          transform: translateX(-50%) translateY(50%)
+      .player-link-btn.disabled
+        color: $slider-background-color
+        cursor: default
+      .previous-btn
+        font-size: 18px
+        i:before
+          content: "\e172"
+      .play-btn
+        i:before
+          content: "\e174"
+      .pause-btn
+        i:before
+          content: "\e175"
+      .stop-btn
+        i:before
+          content: "\e176"
+      .next-btn
+        font-size: 18px
+        i:before
+          content: "\e178"
+
+    .controls-center
+      color: #BBB
+      font-family: open_sansregular, 'Helvetica Neue', Helvetica, Arial, sans-serif
+      font-size: 14px
+      height: 80px
+      position: absolute
+      left: 300px
+      right: 300px
+      top: 0
+      bottom: 0
+      .media-title
+        height: 40px
+        line-height: 40px
+        margin-left: 80px
+        margin-right: 80px
+        overflow: hidden
+        text-align: center
+        .artist
+          display: inline-block
+          height: 16px
+          margin-right: 5px
+          color: #bbb
+        .title
+          display: inline-block
+          height: 16px
+          margin-right: 5px
+          color: #777
+      .seek-bar-container
+        position: relative
+        .player-position
+          height: 24px
+          line-height: 24px
+          float: left
+          text-align: right
+          width: 60px
+          color: #777
+        .player-duration
+          height: 24px
+          line-height: 24px
+          float: right
+          width: 60px
+          color: #777
+        .player-seek-bar
+          box-sizing: border-box
+          position: absolute
+          left: 80px
+          right: 80px
+          top: 0
+          height: 23px
+          cursor: pointer
+          .player-slider-track
+            height: 5px
+            position: relative
+            top: 9px
+            background: #1F1F1F
+            border-radius: 2.5px
+            .player-slider-progress
+              background: $main-progress-color
+              border-radius: 2.5px
+              height: 5px
+              position: absolute
+              left: 0
+              top: 0
+            .player-slider-loading
+              background: $main-progress-color
+              border-radius: 2.5px
+              height: 5px
+              position: absolute
+              left: 0
+              top: 0
+            .player-slider-buffer
+              position: absolute
+              left: 0
+              top: 0
+              border-radius: 2.5px
+              background: $buffer-progress-color
+              height: 5px
+          
+    .controls-right
+      position: absolute
+      right: 24px
+      font-family: open_sansregular, 'Helvetica Neue', Helvetica, Arial, sans-serif
+      top: 0
+      height: 80px
+      width: 300px
+      text-align: right
+      .volume-btn
+        float: right
+        i.volume-low:before
+          content: "\e184"
+        i.volume-high:before
+          content: "\e185"
+        i.mute:before
+          content: "\e183"
+      .playlist-btn
+        float: right
+        font-size: 20px
+        i:before
+          content: "\e160"
+      .hide-playlist-btn
+        float: right
+        font-size: 20px
+        i:before
+          content: "\e208"
+      .start-stream-btn
+        float: right
+        font-size: 20px
+        opacity: 0.6
+        i:before
+          content: "\e087"
+      .stop-stream-btn
+        float: right
+        font-size: 20px
+        opacity: 1
+        i:before
+          content: "\e087"
+      .player-volume-slider
+        width: 70px
+        height: 23px
+        margin-left: 5px
+        margin-top: 28px
+        margin-right: 20px
+        padding-bottom: 6px
+        float: right
+        left: 0
+        right: 0
+
+        display: block
+        position: relative
+@keyframes playerloadinganimation
+  0%
+    width: 15% 
+    margin-left: -25% 
+  50%
+    width: 30% 
+    margin-left: 35% 
+  100%
+    width: 15% 
+    margin-left: 110% 
+@-webkit-keyframes playerloadinganimation
+  0%
+    width: 15% 
+    margin-left: -15% 
+  50%
+    width: 30% 
+    margin-left: 35% 
+  100%
+    width: 15% 
+    margin-left: 100% 

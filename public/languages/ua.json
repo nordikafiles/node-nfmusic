@@ -1,0 +1,14 @@
+{
+	"yes": "Так",
+	"no": "Немає",
+	"ok": "Ok",
+	"Invert mouse wheel": "Інвертувати колесо миші",
+	"Invert mouse wheel to control the volume?": "Інвертувати колесо миші для управління гучністю?",
+	"Unknown destination address": "Немає адреси приймача",
+	"Unknown destination address. Do you want to specify it now?": "Немає адреси приймача. Чи хочете ви вказати його зараз?",
+	"Testing JSON-RPC": "Тест JSON-RPC",
+	"apply": "Застосувати",
+	"cancel": "Скасування",
+	"Successfully paired": "Успішно підключено",
+	"Successfully paired with kodi": "Медіацентр приєднаний успішно"
+}

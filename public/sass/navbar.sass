@@ -1,0 +1,58 @@
+.nav-bar
+	position: fixed
+	z-index: 99
+	left: 0
+	right: 0
+	top: 0
+	height: 60px
+	width: 100%
+	background: #282828
+	border-bottom: solid 1px $border-color
+	box-shadow: 0 0 0 3px rgba(0,0,0,.2)
+	.nav-bar-search
+		display: inline-block
+		width: 250px
+		margin: 15px
+		position: relative
+		label
+			i.search
+				font-family: 'Glyphicons Regular'
+				position: absolute
+				top: 4px
+				left: 10px
+				color: #999
+				cursor: default
+				&:before
+					content: "\e028"
+					font-style: normal
+					font-size: 12px
+			i.clear
+				font-family: 'Glyphicons Regular'
+				position: absolute
+				top: 4px
+				right: 10px
+				color: #999
+				cursor: pointer
+				&.dark:hover
+					color: #323232
+				&.light:hover
+					color: #eee
+				&:before
+					content: "\e193"
+					font-style: normal
+					font-size: 12px
+		input
+			height: 29px
+			border-radius: 14.5px
+			background-color: #3a3a3a
+			border: 0 !important
+			outline: none
+			margin: 0
+			color: #eee
+			transition: background-color .2s
+			padding:
+				left: 28px
+				right: 32px
+			&:focus 
+				color: #555
+				background-color: #eee

@@ -1,0 +1,83 @@
+@import "player.sass"
+@import "musiclist.sass"
+@import "modal.sass"
+@import "button.sass"
+@import "navbar.sass"
+
+
+body
+  background: #1f1f1f
+  min-width: 1200px
+#globalLoading
+  background: #1f1f1f
+  position: fixed
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  z-index: 99999999999
+  margin: 0
+  transform: scale(0.5)
+  transition: opacity .5s, transform .5s 
+  opacity: 0
+  &.show
+    opacity: 1
+    transform: scale(1)
+  .bubblingG
+    position: absolute
+    left: 50%
+    top: 50%
+    margin-top: -25px
+    margin-left: -40px
+.vk-container
+  position: relative
+  top: 50%
+  left: 50%
+  width: 500px
+  height: 500px
+  margin-left: -250px
+  margin-top: -250px
+  transform: scale(0.8)
+  opacity: 0
+  transition: all 0.2s
+.vkbtn
+  position: absolute
+  left: 50%
+  top: 50%
+  margin-left: -100px
+  margin-top: -100px
+  width: 200px
+  height: 200px
+  cursor: pointer
+  padding: -5px
+  transition: all 0.2s
+  &:hover
+    margin-left: -105px
+    margin-top: -105px
+    width: 210px
+    height: 210px
+  &:active
+    margin-left: -100px
+    margin-top: -100px
+    width: 200px
+    height: 200px
+.vk-tooltip
+  position: absolute
+  top: 50%
+  left: 50%
+  padding: 20px
+  background: rgba(255, 255, 255, 0.5)
+  width: 500px
+  text-align: center
+  margin-left: -250px
+  margin-top: 125px
+  border-radius: 5px
+  &:after
+    display: block
+    position: absolute
+    content: ''
+    left: 50%
+    margin-left: -5px
+    top: -20px
+    border: 10px solid transparent
+    border-bottom: 10px solid rgba(255, 255, 255, 0.5)
