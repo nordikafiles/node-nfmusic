@@ -22,6 +22,7 @@ fs = require("fs");
 const path = require('path');
 
 const SONGS_PATH = process.env.SONGS_PATH || path.join(__dirname, 'songs');
+const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3023;
 
 //##################
 //# Static server ##
