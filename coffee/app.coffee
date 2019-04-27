@@ -1,7 +1,7 @@
 ###################
 #### Requires #####
 ###################
-
+require('dotenv').config()
 express = require('express')
 app = express()
 http = require('http').Server(app)
@@ -14,7 +14,6 @@ fs = require "fs"
 ## Static server ##
 ###################
 
-app.use express.static(__dirname+"/public")
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(multer())
@@ -25,6 +24,10 @@ app.get "/download/:song", (req, res) ->
 	for track in tracklist
 		res.write track.title + "\n"
 	res.end()
+app.get "/tracklist.json", (req, res) ->
+	console.log(fs.readdirSync("#{__dirname}/songs"))
+	res.json([])
+app.use express.static(__dirname+"/public")
 http.listen 3000, ->
   console.log 'listening on *:3000'
   return

@@ -4,28 +4,28 @@
 "title": "No More (Radio Edit)",
 "artist": "Masoud feat. Aneym",
 "url": "song2.mp3",
-"coverArt": ""
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
 "title": "Chandelier",
 "artist": "Sia",
 "url": "song1.mp3",
-"coverArt": "http://upload.wikimedia.org/wikipedia/en/c/c8/Chandelier_by_Sia_coverwork.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
 "title": "I Never Find (Original Mix)",
 "artist": "Matteo Marini",
 "url": "song3.mp3",
-"coverArt": "http://images.junostatic.com/full/CS1487551-02A-BIG.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
 "title": "Man On The Run (Original Mix)",
 "artist": "Dash Berlin with Cerf, Mitiska & Jaren",
 "url": "song4.mp3",
-"coverArt": ""
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -33,7 +33,7 @@
 "artist": "Notre Dame de Paris",
 "songid": "433",
 "url": "/songs/audio433.mp3",
-"coverArt": "/songs/cover433.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -41,7 +41,7 @@
 "artist": "Spice Girls",
 "songid": "124",
 "url": "/songs/audio124.mp3",
-"coverArt": "/songs/cover124.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -49,7 +49,7 @@
 "artist": "Billy Idol",
 "songid": "45",
 "url": "/songs/audio45.mp3",
-"coverArt": "/songs/cover45.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -57,7 +57,7 @@
 "artist": "Ricchi e Poveri",
 "songid": "385",
 "url": "/songs/audio385.mp3",
-"coverArt": "/songs/cover385.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -65,7 +65,7 @@
 "artist": "Simon Viklund",
 "songid": "240",
 "url": "/songs/audio240.mp3",
-"coverArt": "/songs/cover240.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -73,7 +73,7 @@
 "artist": "Depeche Mode",
 "songid": "170",
 "url": "/songs/audio170.mp3",
-"coverArt": "/songs/cover170.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -81,7 +81,7 @@
 "artist": "The Rolling Stones",
 "songid": "614",
 "url": "/songs/audio614.mp3",
-"coverArt": "/songs/cover614.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -89,7 +89,7 @@
 "artist": "Empire Of The Sun",
 "songid": "716",
 "url": "/songs/audio716.mp3",
-"coverArt": "/songs/cover716.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -97,7 +97,7 @@
 "artist": "Great Northern",
 "songid": "622",
 "url": "/songs/audio622.mp3",
-"coverArt": "/songs/cover622.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -105,7 +105,7 @@
 "artist": "Carpenter Brut",
 "songid": "603",
 "url": "/songs/audio603.mp3",
-"coverArt": "/songs/cover603.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -113,7 +113,7 @@
 "artist": "Simon Viklund",
 "songid": "230",
 "url": "/songs/audio230.mp3",
-"coverArt": "/songs/cover230.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -121,7 +121,7 @@
 "artist": "Fun Feat Janelle Monae",
 "songid": "125",
 "url": "/songs/audio125.mp3",
-"coverArt": "/songs/cover125.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -129,7 +129,7 @@
 "artist": "Asaf Avidan and The Mojos",
 "songid": "181",
 "url": "/songs/audio181.mp3",
-"coverArt": "/songs/cover181.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -137,7 +137,7 @@
 "artist": "Samantha Fox",
 "songid": "393",
 "url": "/songs/audio393.mp3",
-"coverArt": "/songs/cover393.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -145,7 +145,7 @@
 "artist": "Azuro feat. Elly",
 "songid": "66",
 "url": "/songs/audio66.mp3",
-"coverArt": "/songs/cover66.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -153,7 +153,7 @@
 "artist": "Janes Addiction",
 "songid": "572",
 "url": "/songs/audio572.mp3",
-"coverArt": "/songs/cover572.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -161,7 +161,7 @@
 "artist": "K.B.Caps",
 "songid": "405",
 "url": "/songs/audio405.mp3",
-"coverArt": "/songs/cover405.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -169,7 +169,7 @@
 "artist": "Enya",
 "songid": "158",
 "url": "/songs/audio158.mp3",
-"coverArt": "/songs/cover158.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -177,7 +177,7 @@
 "artist": "Envy",
 "songid": "206",
 "url": "/songs/audio206.mp3",
-"coverArt": "/songs/cover206.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -185,7 +185,7 @@
 "artist": "Simon Viklund",
 "songid": "249",
 "url": "/songs/audio249.mp3",
-"coverArt": "/songs/cover249.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -193,7 +193,7 @@
 "artist": "Tito Puente",
 "songid": "350",
 "url": "/songs/audio350.mp3",
-"coverArt": "/songs/cover350.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -201,7 +201,7 @@
 "artist": "Mozzart",
 "songid": "407",
 "url": "/songs/audio407.mp3",
-"coverArt": "/songs/cover407.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -209,7 +209,7 @@
 "artist": "Carmen Twillie",
 "songid": "587",
 "url": "/songs/audio587.mp3",
-"coverArt": "/songs/cover587.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -217,7 +217,7 @@
 "artist": "Ace Of Base",
 "songid": "413",
 "url": "/songs/audio413.mp3",
-"coverArt": "/songs/cover413.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -225,7 +225,7 @@
 "artist": "Rihanna and Eminem ",
 "songid": "140",
 "url": "/songs/audio140.mp3",
-"coverArt": "/songs/cover140.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -233,7 +233,7 @@
 "artist": "Laidback",
 "songid": "51",
 "url": "/songs/audio51.mp3",
-"coverArt": "/songs/cover51.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -241,7 +241,7 @@
 "artist": "Jacques Offenbach",
 "songid": "629",
 "url": "/songs/audio629.mp3",
-"coverArt": "/songs/cover629.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -249,7 +249,7 @@
 "artist": "Eddie Rabbit",
 "songid": "552",
 "url": "/songs/audio552.mp3",
-"coverArt": "/songs/cover552.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -257,7 +257,7 @@
 "artist": "Baccara",
 "songid": "412",
 "url": "/songs/audio412.mp3",
-"coverArt": "/songs/cover412.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -265,7 +265,7 @@
 "artist": "Empire Of The Sun",
 "songid": "70",
 "url": "/songs/audio70.mp3",
-"coverArt": "/songs/cover70.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -273,7 +273,7 @@
 "artist": "Pitbull feat. Christina Aguilera",
 "songid": "123",
 "url": "/songs/audio123.mp3",
-"coverArt": "/songs/cover123.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -281,7 +281,7 @@
 "artist": "Johannes Brahms",
 "songid": "526",
 "url": "/songs/audio526.mp3",
-"coverArt": "/songs/cover526.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -289,7 +289,7 @@
 "artist": "Bullets And Octane",
 "songid": "305",
 "url": "/songs/audio305.mp3",
-"coverArt": "/songs/cover305.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -297,7 +297,7 @@
 "artist": "Imagine Dragons",
 "songid": "424",
 "url": "/songs/audio424.mp3",
-"coverArt": "/songs/cover424.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -305,7 +305,7 @@
 "artist": "Naughty Boy feat. Sam Smith",
 "songid": "84",
 "url": "/songs/audio84.mp3",
-"coverArt": "/songs/cover84.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -313,7 +313,7 @@
 "artist": "Chubby Checker",
 "songid": "183",
 "url": "/songs/audio183.mp3",
-"coverArt": "/songs/cover183.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -321,7 +321,7 @@
 "artist": "Simon Viklund",
 "songid": "235",
 "url": "/songs/audio235.mp3",
-"coverArt": "/songs/cover235.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -329,7 +329,7 @@
 "artist": "Ice Cube",
 "songid": "583",
 "url": "/songs/audio583.mp3",
-"coverArt": "/songs/cover583.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -337,7 +337,7 @@
 "artist": "JJ",
 "songid": "177",
 "url": "/songs/audio177.mp3",
-"coverArt": "/songs/cover177.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -345,7 +345,7 @@
 "artist": "Scotch",
 "songid": "411",
 "url": "/songs/audio411.mp3",
-"coverArt": "/songs/cover411.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -353,7 +353,7 @@
 "artist": "Patrick Swayze",
 "songid": "481",
 "url": "/songs/audio481.mp3",
-"coverArt": "/songs/cover481.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -361,7 +361,7 @@
 "artist": "Grandmaster Flash & The Furious Five",
 "songid": "328",
 "url": "/songs/audio328.mp3",
-"coverArt": "/songs/cover328.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -369,7 +369,7 @@
 "artist": "Matisse and Sadko",
 "songid": "278",
 "url": "/songs/audio278.mp3",
-"coverArt": "/songs/cover278.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -377,7 +377,7 @@
 "artist": "Dillon Francis & DJ Snake",
 "songid": "362",
 "url": "/songs/audio362.mp3",
-"coverArt": "/songs/cover362.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -385,7 +385,7 @@
 "artist": "Rihanna and Eminem ",
 "songid": "140",
 "url": "/songs/audio140.mp3",
-"coverArt": "/songs/cover140.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -393,7 +393,7 @@
 "artist": "DJ Fresh & Jay Fay ",
 "songid": "724",
 "url": "/songs/audio724.mp3",
-"coverArt": "/songs/cover724.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -401,7 +401,7 @@
 "artist": "Empire Of The Sun",
 "songid": "70",
 "url": "/songs/audio70.mp3",
-"coverArt": "/songs/cover70.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -409,7 +409,7 @@
 "artist": "Richard Gere & Renee Zellweger",
 "songid": "452",
 "url": "/songs/audio452.mp3",
-"coverArt": "/songs/cover452.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -417,7 +417,7 @@
 "artist": "Marlon Roudette",
 "songid": "215",
 "url": "/songs/audio215.mp3",
-"coverArt": "/songs/cover215.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -425,7 +425,7 @@
 "artist": "Nathan Lane, Ernie Sabella, Matthew Broderick ",
 "songid": "589",
 "url": "/songs/audio589.mp3",
-"coverArt": "/songs/cover589.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -433,7 +433,7 @@
 "artist": "The Beatles",
 "songid": "114",
 "url": "/songs/audio114.mp3",
-"coverArt": "/songs/cover114.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -441,7 +441,7 @@
 "artist": "Gorillaz",
 "songid": "71",
 "url": "/songs/audio71.mp3",
-"coverArt": "/songs/cover71.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -449,7 +449,7 @@
 "artist": "Whitey Shafer",
 "songid": "553",
 "url": "/songs/audio553.mp3",
-"coverArt": "/songs/cover553.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -457,7 +457,7 @@
 "artist": "Yppah",
 "songid": "628",
 "url": "/songs/audio628.mp3",
-"coverArt": "/songs/cover628.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -465,7 +465,7 @@
 "artist": "Nirvana",
 "songid": "655",
 "url": "/songs/audio655.mp3",
-"coverArt": "/songs/cover655.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -473,7 +473,7 @@
 "artist": "Den Harrow",
 "songid": "391",
 "url": "/songs/audio391.mp3",
-"coverArt": "/songs/cover391.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -481,7 +481,7 @@
 "artist": "Wye Oak",
 "songid": "275",
 "url": "/songs/audio275.mp3",
-"coverArt": "/songs/cover275.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -489,7 +489,7 @@
 "artist": "Kesha",
 "songid": "75",
 "url": "/songs/audio75.mp3",
-"coverArt": "/songs/cover75.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -497,7 +497,7 @@
 "artist": "K.B.Caps",
 "songid": "405",
 "url": "/songs/audio405.mp3",
-"coverArt": "/songs/cover405.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -505,7 +505,7 @@
 "artist": "Pupo ",
 "songid": "382",
 "url": "/songs/audio382.mp3",
-"coverArt": "/songs/cover382.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -513,7 +513,7 @@
 "artist": "Flo Rida feat. Kesha ",
 "songid": "23",
 "url": "/songs/audio23.mp3",
-"coverArt": "/songs/cover23.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -521,7 +521,7 @@
 "artist": "Richard Gere & Renee Zellweger",
 "songid": "452",
 "url": "/songs/audio452.mp3",
-"coverArt": "/songs/cover452.jpg"
+"coverArt": "/img/default-album.png"
 },
 {
 "type": "mp3",
@@ -529,6 +529,6 @@
 "artist": "Johann Strauss I",
 "songid": "524",
 "url": "/songs/audio524.mp3",
-"coverArt": "/songs/cover524.jpg"
+"coverArt": "/img/default-album.png"
 }
 ]
