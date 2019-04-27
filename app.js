@@ -51,7 +51,7 @@ app.get("/download/:song", function(req, res) {
 
 app.get("/tracklist.json", function(req, res) {
   console.log();
-  return res.json(fs.readdirSync(`${__dirname}/songs`).map(x => {
+  return res.json(fs.readdirSync(SONGS_PATH).map(x => {
     let y = path.basename(x).replace('.mp3', '').split(" - ");
     let artist = '';
     let title = '';
